@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Terima Kasih OSIS & Panitia MPLS Pgri 8</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      background-image: url('foto.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      color: white;
+    }
+
+    .message-box {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 700px;
+      z-index: 1;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .message-box h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .message-box p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      white-space: pre-line;
+    }
+
+    .thank-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ffffffcc;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .thank-button:hover {
+      background-color: #fff;
+    }
+
+    /* Animasi salju/bunga gugur */
+    .falling {
+      position: fixed;
+      top: -50px;
+      font-size: 20px;
+      color: #fff;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 0;
+      animation-name: fall;
+      animation-timing-function: linear;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message-box">
+    <h1>Hai para OSIS dan Panitia MPLS Pgri 8👋</h1>
+    <p>
+      Terima kasih karena telah membantu kami untuk masa MPLS.
+      Maaf karena kami ribut, berisik, dan susah diatur 🙏
+
+      Terima kasih kak, semoga kalian tidak kesal ataupun marah karena mengajar atau mengurus kami.
+      Sampai jumpa di lain waktu ☺️
+    </p>
+    <button class="thank-button" onclick="ucapan()">❤️ Terima Kasih!</button>
+  </div>
+
+  <script>
+    // Fungsi tombol
+    function ucapan() {
+      alert("Kami benar-benar berterima kasih, Kakak OSIS & Panitia MPLS! ❤️");
+    }
+
+    // Efek salju / bunga gugur
+    const symbols = ['❄️','🌸','🌺','🍂','💮'];
+    function createFalling() {
+      const el = document.createElement('div');
+      el.classList.add('falling');
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.animationDuration = 5 + Math.random() * 5 + 's';
+      el.style.fontSize = (16 + Math.random() * 10) + 'px';
+      el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      document.body.appendChild(el);
+
+      setTimeout(() => {
+        el.remove();
+      }, 10000);
+    }
+
+    setInterval(createFalling, 300);
+  </script>
+
+</body>
+  </html>
